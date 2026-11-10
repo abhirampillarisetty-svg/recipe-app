@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cookbook - Recipe App</title>
+<style>
+  :root { --bg1:#FFF4E8; --bg2:#FFEFEF; --bg3:#FFF9E5; --card:#fff; --text:#2a2118; --muted:#7a6a5c; --line:#eadccd; --pri:#FF6B35; --brand:linear-gradient(90deg,#FF8A00,#FF4D6D,#D81B60); }
+  [data-theme="dark"] { --bg1:#1E120A; --bg2:#2A1410; --bg3:#241A0C; --card:#33231a; --text:#fbefe4; --muted:#c9b4a2; --line:#4d3a2c; --pri:#ff9362; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Segoe UI',Roboto,Arial,sans-serif; background:linear-gradient(135deg,var(--bg1),var(--bg2),var(--bg3)) fixed; color:var(--text); min-height:100vh; }
+  header { background:var(--brand); color:#fff; padding:14px 16px; display:flex; align-items:center; justify-content:space-between; box-shadow:0 4px 14px rgba(255,77,109,.35); position:sticky; top:0; z-index:5; }
+  header h1 { font-size:21px; font-weight:800; flex:1; text-align:center; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; padding:0 6px; }
+  .hbtns { display:flex; gap:2px; min-width:96px; align-items:center; }
+  .hbtns.r { justify-content:flex-end; }
+  .ib { background:none; border:none; color:#fff; font-size:20px; cursor:pointer; padding:6px 8px; border-radius:8px; position:relative; }
+  .ib:hover { background:rgba(255,255,255,.2); }
+  .badge { position:absolute; top:-2px; right:-2px; background:#fff; color:#D81B60; font-size:11px; font-weight:800; min-width:17px; height:17px; border-radius:9px; display:flex; align-items:center; justify-content:center; padding:0 4px; }
+  main { padding:18px; }
+  .screen { max-width:800px; margin:0 auto; animation:fade .45s ease; }
+  .screen.wide { max-width:1200px; }
+  .screen.form { max-width:600px; }
+  @keyframes fade { from{opacity:0; transform:translateY(14px);} to{opacity:1; transform:none;} }
+  @keyframes pop { 0%{transform:scale(0);} 70%{transform:scale(1.2);} 100%{transform:scale(1);} }
+  .card { background:var(--card); border-radius:20px; padding:18px; box-shadow:0 5px 16px rgba(0,0,0,.08); margin-bottom:14px; }
+  .search { width:100%; padding:14px 18px; border:none; border-radius:30px; font-size:16px; background:var(--card); color:var(--text); box-shadow:0 3px 10px rgba(0,0,0,.08); }
+  .search:focus { outline:2px solid var(--pri); }
+  .chips { display:flex; gap:8px; overflow-x:auto; padding:12px 2px; scrollbar-width:none; }
+  .chip { flex-shrink:0; padding:8px 16px; border-radius:20px; border:1.5px solid var(--line); background:var(--card); color:var(--text); cursor:pointer; font-size:14px; font-weight:600; transition:all .2s; }
+  .chip.on { background:var(--brand); color:#fff; border-color:transparent; box-shadow:0 3px 8px rgba(255,77,109,.4); }
+  .grid { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; padding-bottom:90px; }
+  @media (min-width:700px) { .grid { grid-template-columns:repeat(3,1fr); } }
+  @media (min-width:1000
